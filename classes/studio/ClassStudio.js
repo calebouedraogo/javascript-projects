@@ -1,5 +1,34 @@
 //Declare a class called CrewCandidate with a constructor that takes three parameters—name, mass, and scores. Note that scores will be an array of test results.
+class CrewCandidate {
+    constructor(name, mass, scores) {
+        this.name = name;
+        this.mass = mass;
+        this.scores = scores;
+    }
+    addScore(score){
+        this.scores.push(score);
+    }
+    average(){
+        let sum = 0;
+        for(let i in this.scores){
+            sum += this.scores[i];
+        }
+        let avg = sum / (this.scores.length);
+        let roundAdg = Math.round(avg*10)/10;
+        return roundAdg;
+    }
+    status(){
+        let avg = 
+        return ``;
+    }
+}
+ const bear = new CrewCandidate("Bubba Bear", 135, [88, 85, 90]);
+ const maltese = new CrewCandidate("Merry Maltese", 1.5, [93, 88, 97]);
+ const gator = new CrewCandidate("Glad Gator", 225, [75, 78, 62]);
 
+ console.log(bear, maltese, gator);
+ bear.addScore(83);
+ console.log(bear.scores,maltese.average());
 
 
 //Add methods for adding scores, averaging scores and determining candidate status as described in the studio activity.
