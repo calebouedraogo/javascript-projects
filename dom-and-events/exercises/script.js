@@ -15,5 +15,11 @@ function init () {
     missionAbort.addEventListener("mouseout", function( event) {
         event.target.style.backgroundColor = "";
     });
+    missionAbort.addEventListener('click', event => {
+        let confirmation = confirm("Are you sure you want to abort the mission?");
+        if (confirmation) {
+            paragraph.innerHTML = 'Mission aborted! Space shuttle returning home'
+        }
+    })
 }
 window.addEventListener("load", init);
