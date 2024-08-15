@@ -7,11 +7,28 @@
       label { display: block; margin-bottom: 7px;}
     </style>
   </head>
+  <script>
+    window.addEventListener("load", function(event){
+      let form = document.querySelector("form");
+      form.addEventListener("submit", function(event){
+        let testName = document.querySelector("input[name=testName]");
+        let testDate = document.querySelector("input[name=testDate]");
+        let rocketType = document.querySelector("input[name=rocketType]");
+        let boosterCount = document.querySelector("input[name=boosterCount]");
+        let windRating = document.querySelector("input[name=windRating]");
+        let productionServers = document.querySelector("input[name=productionServers]");
+        if (testName.value === "" || testDate.value === "" || rocketType.value === "" || boosterCount.value === "" || windRating.value === "" || productionServers.value === "") {
+          alert("All fields are requiered");
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
   <body>
     <!-- TODO: add form here -->
      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
-      <label>Test Name <input type="text" name="textName"/></label>
-      <label>Test Date <input type="date" name="testDate"></label>
+      <label>Test Name <input type="text" name="testName"/></label>
+      <label>Test Date <input type="date" name="testDate"/></label>
       <label>Rocket Type
         <select name="rocketType">
           <option value="Brant">Brant</option>
